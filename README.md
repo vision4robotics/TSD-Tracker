@@ -8,7 +8,7 @@
 
 ## Instructions
 
-2. Run `TSD_Demo.m`
+1. Run `TSD_Demo.m`
 
 ## Acknowledgements
 
