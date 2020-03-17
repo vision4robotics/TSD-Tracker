@@ -80,11 +80,11 @@ params.t_global.cell_selection_thresh = 0.75^2;
 
 %   Search region + extended background parameters
 params.search_area_shape = 'square';    % the shape of the training/detection window: 'proportional', 'square' or 'fix_padding'
-params.search_area_scale = 5.2;           % the size of the training/detection area proportional to the target size
+params.search_area_scale = 5.08;           % the size of the training/detection area proportional to the target size
 params.filter_max_area   = 50^2;        % the size of the training/detection area in feature grid cells
 
 %   Learning parameters
-params.learning_rate       = 0.03;        % learning rate
+params.learning_rate       = 0.0408;        % learning rate
 params.output_sigma_factor = 1/16;		% standard deviation of the desired correlation output (proportional to target)
 
 %   Detection parameters
@@ -113,12 +113,12 @@ params.visualization = 1;
 
 
 params.nSamples = 50;                  % Maximal number of samples in memory 200
-params.sample_reg = 4.8;                % Weights regularization (mu)
+params.sample_reg = 3.02;                % Weights regularization (mu)
 params.sample_burnin = 10;              % Number of frames before weight optimization starts
 params.num_acs_iter = 1;                % Number of Alternate Convex Search iterations
 params.sample_replace_strategy = 'constant_tail';
 params.lt_size = 10;
-params.nu = 0.18;
+params.nu = 0.201;
 params.single_DPMR = 14;
 params.rate = 0.225;
 

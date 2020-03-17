@@ -340,11 +340,13 @@ for total_frame = 1:numel(s_frames)
         betha = 10;
         mumax = 10000;
         num_caculate = min(frame, params.nSamples);
-        A = bsxfun(@times, sample_weights(1:num_caculate,:,:,:), samplesf(1:num_caculate,:,:,:));
+        AA = bsxfun(@times, sample_weights(1:num_caculate,:,:,:), samplesf(1:num_caculate,:,:,:));
+        BB = permute(sum(bsxfun(@times, AA, conj(samplesf(1:num_caculate,:,:,:))),1),[2 3 4 1]);
+        CC = permute(sum(bsxfun(@times, AA , conj(sampleyf(1:num_caculate,:,:,:))),1),[2 3 4 1]);
         
         for i = 1:params.admm_iterations
-            g_f = (1./(permute(sum(bsxfun(@times, A, conj(samplesf(1:num_caculate,:,:,:))),1),[2 3 4 1]) + 0.5 * mu)) ...
-                .* (permute(sum(bsxfun(@times, A , conj(sampleyf(1:num_caculate,:,:,:))),1),[2 3 4 1]) - l_f + 0.5 * mu .* h_f);
+%             g_f = (1./(BB + 0.5 * mu)) .* (CC - l_f + 0.5 * mu .* h_f);
+            g_f = bsxfun(@times, (1./(BB + 0.5 * mu)), (CC - l_f + 0.5 * mu .* h_f));
             
             h_f = bsxfun(@times,(1/(mu + params.admm_lambda)), (2 .* l_f + mu .* g_f));
             
