@@ -6,6 +6,30 @@
 
 > Matlab implementation of *Training-set Distillation for Real-Time UAV Object Tracking* (TSD-Tracker).
 
+# Publishment and Citation
+
+This paper has been published by ICRA2020.
+
+You can find this papar here: https://ieeexplore.ieee.org/document/9197252/.
+
+Please cite this paper as:
+
+@INPROCEEDINGS{9197252,
+
+  author={F. {Li} and C. {Fu} and F. {Lin} and Y. {Li} and P. {Lu}},
+  
+  booktitle={Proceedings of IEEE International Conference on Robotics and Automation}, 
+  
+  title={Training-Set Distillation for Real-Time UAV Object Tracking}, 
+  
+  year={2020},
+  
+  volume={},
+  
+  number={},
+  
+  pages={9715-9721},}
+
 ## Instructions
 
 1. Run `TSD_Demo.m`
